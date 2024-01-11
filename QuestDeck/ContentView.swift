@@ -8,14 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
+    
     var body: some View {
+        //let deck = Deck()
+        let card = Card(value: "deciever", suite: "spades")
+        
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("QuestDeck")
+                .bold()
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                // card count
+        
+            VStack {
+                Image(systemName: "globe")
+                    .imageScale(.large)
+                    .foregroundStyle(.tint)
+                Text((card.value))
+                Text(card.suite)
+                // card.image
+                //card.value
+            }
+            
+            .padding()
         }
-        .padding()
     }
 }
 
