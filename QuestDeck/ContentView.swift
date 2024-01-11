@@ -7,14 +7,14 @@
 
 import SwiftUI
 
+
+
+
 struct ContentView: View {
-    
-    
+    var deck = Deck()
+    //var card = Card(name: "Doom", desc: "Joker")
     
     var body: some View {
-        //let deck = Deck()
-        let card = Card(value: "deciever", suite: "spades")
-        
         VStack {
             Text("QuestDeck")
                 .bold()
@@ -22,13 +22,13 @@ struct ContentView: View {
                 // card count
         
             VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text((card.value))
-                Text(card.suite)
-                // card.image
-                //card.value
+                //Image(systemName: "globe")
+                  //  .imageScale(.large)
+                   // .foregroundStyle(.tint)
+                
+                let card = deck.cards[1]
+                Text((card.name))
+                Text(card.desc)
             }
             
             .padding()

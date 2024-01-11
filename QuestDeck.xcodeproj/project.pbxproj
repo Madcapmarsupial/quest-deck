@@ -7,25 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51871FEA2B4F8F80003B1B99 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51871FE82B4F8F7F003B1B99 /* Card.swift */; };
+		51871FEB2B4F8F80003B1B99 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51871FE92B4F8F80003B1B99 /* Deck.swift */; };
 		51A0DC6F2B4F3C700067DA1F /* QuestDeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0DC6E2B4F3C700067DA1F /* QuestDeckApp.swift */; };
 		51A0DC712B4F3C700067DA1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0DC702B4F3C700067DA1F /* ContentView.swift */; };
 		51A0DC732B4F3C710067DA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51A0DC722B4F3C710067DA1F /* Assets.xcassets */; };
 		51A0DC762B4F3C710067DA1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51A0DC752B4F3C710067DA1F /* Preview Assets.xcassets */; };
-		51A0DC7D2B4F62170067DA1F /* Models in Resources */ = {isa = PBXBuildFile; fileRef = 51A0DC7C2B4F62170067DA1F /* Models */; };
-		51A0DC7F2B4F62820067DA1F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0DC7E2B4F62820067DA1F /* Card.swift */; };
-		51A0DC812B4F74190067DA1F /* Models in Resources */ = {isa = PBXBuildFile; fileRef = 51A0DC802B4F74190067DA1F /* Models */; };
 		51A0DC832B4F77A90067DA1F /* Models in Resources */ = {isa = PBXBuildFile; fileRef = 51A0DC822B4F77A90067DA1F /* Models */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51871FE82B4F8F7F003B1B99 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = QuestDeck/Models/Card.swift; sourceTree = "<group>"; };
+		51871FE92B4F8F80003B1B99 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Deck.swift; path = QuestDeck/Models/Deck.swift; sourceTree = "<group>"; };
 		51A0DC6B2B4F3C700067DA1F /* QuestDeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestDeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51A0DC6E2B4F3C700067DA1F /* QuestDeckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestDeckApp.swift; sourceTree = "<group>"; };
 		51A0DC702B4F3C700067DA1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		51A0DC722B4F3C710067DA1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51A0DC752B4F3C710067DA1F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		51A0DC7C2B4F62170067DA1F /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
-		51A0DC7E2B4F62820067DA1F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Card.swift; path = Models/Card.swift; sourceTree = "<group>"; };
-		51A0DC802B4F74190067DA1F /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Models; path = QuestDeck/Models; sourceTree = "<group>"; };
 		51A0DC822B4F77A90067DA1F /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,7 +41,8 @@
 		51A0DC622B4F3C700067DA1F = {
 			isa = PBXGroup;
 			children = (
-				51A0DC802B4F74190067DA1F /* Models */,
+				51871FE82B4F8F7F003B1B99 /* Card.swift */,
+				51871FE92B4F8F80003B1B99 /* Deck.swift */,
 				51A0DC6D2B4F3C700067DA1F /* QuestDeck */,
 				51A0DC6C2B4F3C700067DA1F /* Products */,
 			);
@@ -60,13 +59,11 @@
 		51A0DC6D2B4F3C700067DA1F /* QuestDeck */ = {
 			isa = PBXGroup;
 			children = (
-				51A0DC7C2B4F62170067DA1F /* Models */,
 				51A0DC822B4F77A90067DA1F /* Models */,
 				51A0DC6E2B4F3C700067DA1F /* QuestDeckApp.swift */,
 				51A0DC702B4F3C700067DA1F /* ContentView.swift */,
 				51A0DC722B4F3C710067DA1F /* Assets.xcassets */,
 				51A0DC742B4F3C710067DA1F /* Preview Content */,
-				51A0DC7E2B4F62820067DA1F /* Card.swift */,
 			);
 			path = QuestDeck;
 			sourceTree = "<group>";
@@ -138,9 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51A0DC832B4F77A90067DA1F /* Models in Resources */,
-				51A0DC7D2B4F62170067DA1F /* Models in Resources */,
 				51A0DC762B4F3C710067DA1F /* Preview Assets.xcassets in Resources */,
-				51A0DC812B4F74190067DA1F /* Models in Resources */,
 				51A0DC732B4F3C710067DA1F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,8 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51871FEB2B4F8F80003B1B99 /* Deck.swift in Sources */,
 				51A0DC712B4F3C700067DA1F /* ContentView.swift in Sources */,
-				51A0DC7F2B4F62820067DA1F /* Card.swift in Sources */,
+				51871FEA2B4F8F80003B1B99 /* Card.swift in Sources */,
 				51A0DC6F2B4F3C700067DA1F /* QuestDeckApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
