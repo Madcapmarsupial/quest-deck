@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		51871FEA2B4F8F80003B1B99 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51871FE82B4F8F7F003B1B99 /* Card.swift */; };
 		51871FEB2B4F8F80003B1B99 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51871FE92B4F8F80003B1B99 /* Deck.swift */; };
+		51871FED2B522298003B1B99 /* Views in Resources */ = {isa = PBXBuildFile; fileRef = 51871FEC2B522298003B1B99 /* Views */; };
+		51871FEF2B572C0B003B1B99 /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51871FEE2B572C0B003B1B99 /* Draw.swift */; };
+		51871FF12B57307F003B1B99 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51871FF02B57307F003B1B99 /* CardView.swift */; };
 		51A0DC6F2B4F3C700067DA1F /* QuestDeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0DC6E2B4F3C700067DA1F /* QuestDeckApp.swift */; };
 		51A0DC712B4F3C700067DA1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0DC702B4F3C700067DA1F /* ContentView.swift */; };
 		51A0DC732B4F3C710067DA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51A0DC722B4F3C710067DA1F /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* Begin PBXFileReference section */
 		51871FE82B4F8F7F003B1B99 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = QuestDeck/Models/Card.swift; sourceTree = "<group>"; };
 		51871FE92B4F8F80003B1B99 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Deck.swift; path = QuestDeck/Models/Deck.swift; sourceTree = "<group>"; };
+		51871FEC2B522298003B1B99 /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
+		51871FEE2B572C0B003B1B99 /* Draw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Draw.swift; path = QuestDeck/Models/Draw.swift; sourceTree = "<group>"; };
+		51871FF02B57307F003B1B99 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = QuestDeck/Views/CardView.swift; sourceTree = "<group>"; };
 		51A0DC6B2B4F3C700067DA1F /* QuestDeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestDeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51A0DC6E2B4F3C700067DA1F /* QuestDeckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestDeckApp.swift; sourceTree = "<group>"; };
 		51A0DC702B4F3C700067DA1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +47,8 @@
 		51A0DC622B4F3C700067DA1F = {
 			isa = PBXGroup;
 			children = (
+				51871FF02B57307F003B1B99 /* CardView.swift */,
+				51871FEE2B572C0B003B1B99 /* Draw.swift */,
 				51871FE82B4F8F7F003B1B99 /* Card.swift */,
 				51871FE92B4F8F80003B1B99 /* Deck.swift */,
 				51A0DC6D2B4F3C700067DA1F /* QuestDeck */,
@@ -59,6 +67,7 @@
 		51A0DC6D2B4F3C700067DA1F /* QuestDeck */ = {
 			isa = PBXGroup;
 			children = (
+				51871FEC2B522298003B1B99 /* Views */,
 				51A0DC822B4F77A90067DA1F /* Models */,
 				51A0DC6E2B4F3C700067DA1F /* QuestDeckApp.swift */,
 				51A0DC702B4F3C700067DA1F /* ContentView.swift */,
@@ -137,6 +146,7 @@
 				51A0DC832B4F77A90067DA1F /* Models in Resources */,
 				51A0DC762B4F3C710067DA1F /* Preview Assets.xcassets in Resources */,
 				51A0DC732B4F3C710067DA1F /* Assets.xcassets in Resources */,
+				51871FED2B522298003B1B99 /* Views in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +161,8 @@
 				51A0DC712B4F3C700067DA1F /* ContentView.swift in Sources */,
 				51871FEA2B4F8F80003B1B99 /* Card.swift in Sources */,
 				51A0DC6F2B4F3C700067DA1F /* QuestDeckApp.swift in Sources */,
+				51871FF12B57307F003B1B99 /* CardView.swift in Sources */,
+				51871FEF2B572C0B003B1B99 /* Draw.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
