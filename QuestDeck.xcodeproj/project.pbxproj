@@ -12,6 +12,7 @@
 		519679DD2B5762C90092F534 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519679DA2B5762C90092F534 /* Deck.swift */; };
 		519679DE2B5762C90092F534 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519679DB2B5762C90092F534 /* Card.swift */; };
 		519679DF2B5762C90092F534 /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519679DC2B5762C90092F534 /* Draw.swift */; };
+		519679E52B577D270092F534 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519679E42B577D270092F534 /* DrawView.swift */; };
 		51A0DC6F2B4F3C700067DA1F /* QuestDeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0DC6E2B4F3C700067DA1F /* QuestDeckApp.swift */; };
 		51A0DC712B4F3C700067DA1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0DC702B4F3C700067DA1F /* ContentView.swift */; };
 		51A0DC732B4F3C710067DA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51A0DC722B4F3C710067DA1F /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		519679DA2B5762C90092F534 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Deck.swift; path = QuestDeck/models/Deck.swift; sourceTree = "<group>"; };
 		519679DB2B5762C90092F534 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = QuestDeck/models/Card.swift; sourceTree = "<group>"; };
 		519679DC2B5762C90092F534 /* Draw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Draw.swift; path = QuestDeck/models/Draw.swift; sourceTree = "<group>"; };
+		519679E42B577D270092F534 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrawView.swift; path = QuestDeck/Views/DrawView.swift; sourceTree = "<group>"; };
 		51A0DC6B2B4F3C700067DA1F /* QuestDeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestDeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51A0DC6E2B4F3C700067DA1F /* QuestDeckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestDeckApp.swift; sourceTree = "<group>"; };
 		51A0DC702B4F3C700067DA1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 		51A0DC622B4F3C700067DA1F = {
 			isa = PBXGroup;
 			children = (
+				519679E42B577D270092F534 /* DrawView.swift */,
 				519679DB2B5762C90092F534 /* Card.swift */,
 				519679DA2B5762C90092F534 /* Deck.swift */,
 				519679DC2B5762C90092F534 /* Draw.swift */,
@@ -159,6 +162,7 @@
 			files = (
 				519679DD2B5762C90092F534 /* Deck.swift in Sources */,
 				51A0DC712B4F3C700067DA1F /* ContentView.swift in Sources */,
+				519679E52B577D270092F534 /* DrawView.swift in Sources */,
 				519679DE2B5762C90092F534 /* Card.swift in Sources */,
 				519679DF2B5762C90092F534 /* Draw.swift in Sources */,
 				51A0DC6F2B4F3C700067DA1F /* QuestDeckApp.swift in Sources */,
