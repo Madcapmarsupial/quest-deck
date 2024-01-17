@@ -6,18 +6,12 @@
 //
 
 import SwiftUI
-
-
-
-
 struct ContentView: View {
-    
     
     //var card = Card(name: "Doom", desc: "Joker")
     @State var deck = Deck()
-    @State var drawn_cards = [Card(name: "1", desc: "one")]
+    //@State var drawn_cards = [Card(name: "1", desc: "one")]
     @State var draws: [Draw] = []
-    
     
     var body: some View {
         
@@ -43,18 +37,12 @@ struct ContentView: View {
                     // reorder draws
                     // list draws
                     if draws.isEmpty == false {
-                        var current_card = draws[0].cards[0]
+                        let current_card = draws[0].cards[0]
                         CardView(card: current_card)
                         
                         //list cards
                         // reorder cards
                     }
-                    
-                    // draws
-                    
-                    // cards
-                    
-                    //CardView(card: current_card)
                 }
                 
                 Spacer()
@@ -69,8 +57,8 @@ struct ContentView: View {
                 // .foregroundStyle(.tint)
                 
                 Button("Draw") {
-                    var draw = Draw(cards: deck.draw(card_count: 3))
-                    draws.append(draw)
+                    let card = deck.draw_card()
+                    deck.drawn_cards.append(card)
                 }
                 .foregroundColor(.red)
             }

@@ -1,18 +1,11 @@
 //
-//  Card.swift
-//  QuestDeck
+//  File.swift
+//  
 //
-//  Created by Sam Green on 1/10/24.
+//  Created by Sam Green on 1/16/24.
 //
-
-//54 cards
-
-
-
-
 
 import Foundation
-
 
 class Card {
     var name: String

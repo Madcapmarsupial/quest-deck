@@ -1,7 +1,6 @@
 
 import Foundation
 
-
 let values = ["Overlord", "Lackey", "The Deciever", "Obstacle", "Revelation", "Allies", "Long-range"]
 let suits = ["Spades", "Diamonds", "Clubs", "Hearts"]
 let d4_timers = ["1", "2", "3", "4"]
@@ -11,11 +10,11 @@ let targets = ["10", "12", "15", "18"]
 class Deck {
     //var cards: Array
     var cards: Array<Card>
+    var drawn_cards: Array<Card>
     
     init() {
         self.cards = Deck.build()
-        //var count = cards.length
-        //var drawn_cards = Array
+        self.drawn_cards = []
     }
     
     class func build() -> Array<Card> {
@@ -36,5 +35,19 @@ class Deck {
         cards.append(Card(name: "Doom", desc: "Joker"))
         return cards
     }
+    
+    func draw_card() -> Card {
+        var card = self.cards.popLast()
+        self.drawn_cards.append(card)
+        return card
+    }
    
+    
+    
+    func draw(int: qty) -> Array<Card> {
+        var cards: [Card] = []
+        for _ in 1 ... qty {
+            cards.append(draw_card)
+        }
+    }
 }
