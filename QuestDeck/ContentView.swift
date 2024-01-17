@@ -32,26 +32,15 @@ struct ContentView: View {
                     Text("draw 6")
                     Text("draw 1")
                 }
-                
+
+                // draw list
                 List {
-                    // reorder draws
-                    // list draws
                     if draws.isEmpty == false {
-                        
-                        //DrawView()
                         ForEach(draws) {draw in
-                            DrawView(draw: draw)
+                            DrawView(draw: draw) // Calls CardView
                         }
-                        //DrawView(draw: current_draw)
-                        
-                        //list cards
-                        // reorder cards
-                        
-                       // let current_card = draws[0].cards[0]
-                        //CardView(card: current_card)
                     }
                 }
-                
                 Spacer()
             }
             //Text(drawn_cards.last!.name)
@@ -62,8 +51,8 @@ struct ContentView: View {
                 //  .imageScale(.large)
                 // .foregroundStyle(.tint)
                 
-                Button("Draw") {
-                    var hand = scene_deck.draw(qty: 3)
+                Button("Draw 3") {
+                    let hand = scene_deck.draw(qty: 3)
                     //var current_draw =
                     draws.append(Draw(cards: hand))
                     //var draw = Draw(cards: hand)

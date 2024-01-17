@@ -7,13 +7,15 @@
 
 import Foundation
 
-class Card {
+class Card: Identifiable {
     var name: String
     var desc: String
+    let id: UUID
     
     init(name: String, desc: String) {
         self.name = name
         self.desc = desc
+        self.id = UUID()
     }
     
 }

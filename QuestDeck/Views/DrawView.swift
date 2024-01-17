@@ -10,12 +10,14 @@ import SwiftUI
 
 struct DrawView: View {
     let draw: Draw
+    //var cards: [Card]
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        // let current_card = draws[0].cards[0]
-         //CardView(card: current_card)
-        
+        HStack {
+            ForEach(draw.cards) { card in
+                CardView(card: card)
+            }
+        }
     }
 }
 
