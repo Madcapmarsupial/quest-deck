@@ -9,7 +9,7 @@ import SwiftUI
 struct ContentView: View {
     
     //var card = Card(name: "Doom", desc: "Joker")
-    @State var deck = Deck()
+    @State var scene_deck = Deck()
     //@State var drawn_cards = [Card(name: "1", desc: "one")]
     @State var draws: [Draw] = []
     
@@ -37,11 +37,16 @@ struct ContentView: View {
                     // reorder draws
                     // list draws
                     if draws.isEmpty == false {
-                        let current_card = draws[0].cards[0]
-                        CardView(card: current_card)
+                        //ForEach(draws) {draw in
+                          //  DrawView(draw: draw)
+                        //}
+                        //DrawView(draw: current_draw)
                         
                         //list cards
                         // reorder cards
+                        
+                        let current_card = draws[0].cards[0]
+                        CardView(card: current_card)
                     }
                 }
                 
@@ -50,15 +55,19 @@ struct ContentView: View {
             //Text(drawn_cards.last!.name)
             //Text(drawn_cards.last!.desc)
             
-            
             VStack {
                 //Image(systemName: "globe")
                 //  .imageScale(.large)
                 // .foregroundStyle(.tint)
                 
                 Button("Draw") {
-                    let card = deck.draw_card()
-                    deck.drawn_cards.append(card)
+                    let hand = scene_deck.draw(qty: 3)
+                    let current_draw = Draw(cards: hand)
+                    draws.append(current_draw)
+                    //var draw = Draw(cards: hand)
+                   // let card: Card = deck.draw_card()
+                    //deck.drawn_cards.append(card)
+                    
                 }
                 .foregroundColor(.red)
             }

@@ -33,21 +33,23 @@ class Deck {
         
         cards.append(Card(name: "Doom", desc: "Joker"))
         cards.append(Card(name: "Doom", desc: "Joker"))
-        return cards
+        return cards.shuffled()
     }
     
     func draw_card() -> Card {
-        var card = self.cards.popLast()
+        var card = self.cards.popLast() ?? Card(name: "", desc: "")
         self.drawn_cards.append(card)
         return card
     }
    
     
     
-    func draw(int: qty) -> Array<Card> {
+    func draw(qty: Int) -> Array<Card> {
         var cards: [Card] = []
         for _ in 1 ... qty {
-            cards.append(draw_card)
+            var single_draw = draw_card()
+            cards.append(single_draw)
         }
+        return cards
     }
 }
