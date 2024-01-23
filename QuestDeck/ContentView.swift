@@ -13,13 +13,19 @@ struct ContentView: View {
     //@State var drawn_cards = [Card(name: "1", desc: "one")]
     @State private var draws: [Draw] = []
     
+    
+    
     var body: some View {
         
         //var card = deck.cards.popLast() ?? Card(name: "hi", desc: "hi")
         //drawn_cards.append(card)
         //let drawn_card = deck.draw()
         
+       
+       
+        
         VStack {
+            
             
             VStack {
                 Text("QuestDeck")
@@ -32,41 +38,42 @@ struct ContentView: View {
                     Text("draw 6")
                     Text("draw 1")
                 }
-
-                // draw list
-                List {
-                    if draws.isEmpty == false {
-                        ForEach(draws) {draw in
-                            DrawView(draw: draw) // Calls CardView
-                        }
-                    }
-                }
-                Spacer()
-            }
-            //Text(drawn_cards.last!.name)
-            //Text(drawn_cards.last!.desc)
-            
-            VStack {
-                //Image(systemName: "globe")
-                //  .imageScale(.large)
-                // .foregroundStyle(.tint)
                 
-                Button("Draw 3") {
-                    let hand = scene_deck.draw(qty: 3)
-                    //var current_draw =
-                    draws.append(Draw(cards: hand))
-                    //var draw = Draw(cards: hand)
-                   // let card: Card = deck.draw_card()
-                    //deck.drawn_cards.append(card)
+                
+                // draw list
+                VStack {
+                    ForEach(draws) { draw in
+                        DrawView(draw: draw)
+                        
+                        
+                        
+                    }
                     
+                    
+                    Spacer()
                 }
-                .foregroundColor(.red)
+                //Text(drawn_cards.last!.name)
+                //Text(drawn_cards.last!.desc)
+                
+                VStack {
+                    //Image(systemName: "globe")
+                    //  .imageScale(.large)
+                    // .foregroundStyle(.tint)
+                
+                    Button("Draw 3") {
+                        let hand = scene_deck.draw(qty: 3)
+                        
+                        // collapse other draws
+                        draws.append(Draw(cards: hand))
+                        
+                    }
+                    .foregroundColor(.red)
+                }
+                .padding()
             }
-            .padding()
         }
     }
 }
-
 #Preview {
     ContentView()
 }

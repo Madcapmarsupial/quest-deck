@@ -8,14 +8,17 @@
 import Foundation
 
 class Card: Identifiable {
-    var name: String
-    var desc: String
     let id: UUID
+    let name: String
+    let desc: String
+    let imageName: String
+   
     
-    init(name: String, desc: String) {
+    init(name: String, desc: String, imageName: String) {
         self.name = name
         self.desc = desc
         self.id = UUID()
+        self.imageName = imageName
     }
     
 }
