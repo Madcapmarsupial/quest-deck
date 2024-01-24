@@ -37,7 +37,7 @@ class Deck {
     }
     
     func draw_card() -> Card {
-        var card = self.cards.popLast() ?? Card(name: "", desc: "", imageName: "error")
+        let card = self.cards.popLast() ?? Card(name: "", desc: "", imageName: "error")
         self.drawn_cards.append(card)
         return card
     }
@@ -47,7 +47,7 @@ class Deck {
     func draw(qty: Int) -> Array<Card> {
         var cards: [Card] = []
         for _ in 1 ... qty {
-            var single_draw = draw_card()
+            let single_draw = draw_card()
             cards.append(single_draw)
         }
         return cards

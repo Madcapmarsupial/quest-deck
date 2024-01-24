@@ -13,10 +13,10 @@ struct CardView: View {
                 //.grayscale(/*@START_MENU_TOKEN@*/0.50/*@END_MENU_TOKEN@*/)
             
                 
-            Text(card.name )
+            //Text(card.name )
             Divider()
                 
-            Text(card.desc)
+            //Text(card.desc)
             Divider()
         }
     }
