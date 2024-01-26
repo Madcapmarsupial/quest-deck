@@ -9,48 +9,69 @@ let targets = ["10", "12", "15", "18"]
 
 class Deck {
     //var cards: Array
-    var cards: Array<Card>
-    var drawn_cards: Array<Card>
+    //var cards: Array<Card>
+    var cards: Array<String>
+    //var drawn_cards: Array<Card>
+    var drawn_cards: Array<String>
     
     init() {
         self.cards = Deck.build()
         self.drawn_cards = []
     }
     
-    class func build() -> Array<Card> {
-        var cards = [Card]()
+    //class func build() -> Array<Card> {
+    class func build() -> Array<String> {
+        var cards = [String]()
         for value in values {
             for suite in suits {
-                cards.append(Card(name: value, desc: suite, imageName: "\(value) of \(suite)"))
+                cards.append("\(value) of \(suite)")
             }
         }
         for target in targets {
-            cards.append(Card(name: target, desc: "Target", imageName: "Target of \(target)"))
+            cards.append("Target of \(target)")
         }
         for d4_timer in d4_timers {
-            cards.append(Card(name: d4_timer, desc: "Timer", imageName: "Timer of \(d4_timer)"))
+            cards.append("Timer of \(d4_timer)")
         }
         
-        cards.append(Card(name: "Doom", desc: "Joker", imageName: "Doom"))
-        cards.append(Card(name: "Doom", desc: "Joker",  imageName: "Doom"))
+        cards.append("Doom")
+        cards.append("Doom")
         return cards.shuffled()
     }
     
-    func draw_card() -> Card {
-        let card = self.cards.popLast() ?? Card(name: "", desc: "", imageName: "error")
-        self.drawn_cards.append(card)
-        self.cards.insert(card, at: 0)
-        return card
-    }
-   
     
-    
-    func draw(qty: Int) -> Array<Card> {
-        var cards: [Card] = []
-        for _ in 1 ... qty {
-            let single_draw = draw_card()
-            cards.append(single_draw)
+    func refill() {
+        if cards.count < 8 {
+            drawn_cards += cards
+            cards = drawn_cards
+            drawn_cards = []
         }
-        return cards
     }
+    
+    //func draw_card() -> Card {
+    func draw_card() -> String {
+        // add card to the end of drawn_cards
+        let drawn_card_name = cards.popLast() ?? "Error"
+        drawn_cards.append(drawn_card_name)
+        // add drawn card back to the beginning of the deck
+        
+        refill()
+        //cards.insert(drawn_card_name, at: 0)
+         
+        return drawn_card_name
+    }
+        
+    
+    //func draw(qty: Int) -> Array<Card> {
+    func draw(qty: Int) -> Array<String> {
+        var hand: [String] = []
+        for _ in 1 ... qty {
+            hand.append(draw_card())
+        }
+        return hand
+    }
+    
+    
+    
+
 }

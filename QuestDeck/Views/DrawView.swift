@@ -9,48 +9,24 @@ import Foundation
 import SwiftUI
 
 struct DrawView: View {
-    let draw: Draw
-  
+    let draw: [String]
     @State private var isCardGroupCollapsed = false
-    //var cards: [Card]
-    
+
     var body: some View {
        
         VStack {
             ScrollView {
                       LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
-                          ForEach(draw.cards) { card in
-                              CardView(card: card)
+                          //ForEach(draw.cards) { card in
+                          ForEach(draw, id: \.self) { card_name in
+                              //CardView(card: card)
+                              CardView(card_name: card_name)
                                   .padding()
                           }
                       }
                   }
-            
-            
-            /*
-             NavigationView {
-             HStack {
-             Section(header: Text("draw #")) {
-             if !isCardGroupCollapsed {
-             ForEach(draw.cards) { card in
-             CardView(card: card)
-             }
-             }
-             }
-             }
-             //.navigationBarTitle("Card App")
-             .navigationBarItems(trailing:
-             Button(
-             action: { withAnimation { self.isCardGroupCollapsed.toggle() } }
-             ){
-             Image(systemName: isCardGroupCollapsed ? "chevron.right.circle" : "chevron.down.circle")
-             }
-             )
-             }
-             */
-            
         }
-        .background(Color.gray)
+        //.background(Color.gray)
     }
         
 }

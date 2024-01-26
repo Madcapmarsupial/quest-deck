@@ -3,23 +3,13 @@ import Foundation
 import SwiftUI
 
 struct CardView: View {
-    let card: Card
+    let card_name: String
     
     var body: some View {
         VStack {
-            Image(card.imageName)
+            Image(card_name)
                 .resizable()
-                //.scaledToFill()
                 .scaledToFit()
-                //.grayscale()
-            
-                
-            //Text(card.name )
-            //Text(card.imageName)
-            //Divider()
-                
-            //Text(card.desc)
-            //Divider()
         }
         
     }
