@@ -15,14 +15,16 @@ struct DrawView: View {
     //var cards: [Card]
     
     var body: some View {
-        HStack {
-            
-
-            ForEach(draw.cards) { card in
-                
-                CardView(card: card)
-            }
-            
+       
+        VStack {
+            ScrollView {
+                      LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
+                          ForEach(draw.cards) { card in
+                              CardView(card: card)
+                                  .padding()
+                          }
+                      }
+                  }
             
             
             /*
@@ -48,6 +50,7 @@ struct DrawView: View {
              */
             
         }
+        .background(Color.gray)
     }
-    
+        
 }

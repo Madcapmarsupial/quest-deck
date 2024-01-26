@@ -39,6 +39,7 @@ class Deck {
     func draw_card() -> Card {
         let card = self.cards.popLast() ?? Card(name: "", desc: "", imageName: "error")
         self.drawn_cards.append(card)
+        self.cards.insert(card, at: 0)
         return card
     }
    

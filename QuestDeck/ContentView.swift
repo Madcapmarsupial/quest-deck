@@ -7,91 +7,93 @@
 
 import SwiftUI
 struct ContentView: View {
-    
     //var card = Card(name: "Doom", desc: "Joker")
-    @State var scene_deck = Deck()
     //@State var drawn_cards = [Card(name: "1", desc: "one")]
+    @State var scene_deck = Deck()
     @State private var draws: [Draw] = []
     @State var draw_count: Int = 0
     @State var current_draw: Draw = Draw(cards: [], draw_num: 0)
-    @State private var isCardGroupCollapsed = false
+    @State private var isCardGroupCollapsed = true
     
     
     
     var body: some View {
-        //var card = deck.cards.popLast() ?? Card(name: "hi", desc: "hi")
-        //drawn_cards.append(card)
-        //let drawn_card = deck.draw()
-        VStack {
-            Text("QuestDeck")
+        Text("QuestDeck")
                 .bold()
                 .font(.title)
-        }
-        
         Divider()
-        
-        VStack(alignment: .leading) {
-           
-            
+            // draw buttons 3.. 4.. etc
             HStack {
                 //Image(systemName: "globe")
                 //  .imageScale(.large)
                 // .foregroundStyle(.tint)
                 Spacer()
-                Button("Draw 3") {
-                    let hand = scene_deck.draw(qty: 3)
-                    draw_count += 1
-                    draws.append(Draw(cards: hand, draw_num: draw_count))
-                    current_draw = draws.last!
+                ForEach(3..<7) { index in
+                    //Spacer()
+                    Button("Draw \(index)") {
+                        let hand = scene_deck.draw(qty: index)
+                        draw_count += 1
+                        draws.insert(Draw(cards: hand, draw_num: draw_count), at: 0)
+                        current_draw = draws.last!
+                    }
+                    Spacer()
+                        
                 }
-               
-                Spacer()
-                
-                Button("Draw 4") {
-                    let hand = scene_deck.draw(qty: 4)
-                    draw_count += 1
-                    draws.append(Draw(cards: hand, draw_num: draw_count))
-                    current_draw = draws.last!
-                }
-                Spacer()
-                
-                Button("Draw 5") {
-                    let hand = scene_deck.draw(qty: 5)
-                    draw_count += 1
-                    draws.append(Draw(cards: hand, draw_num: draw_count))
-                    current_draw = draws.last!
-                }
-                Spacer()
-                
-                Button("Draw 6") {
-                    let hand = scene_deck.draw(qty: 6)
-                    draw_count += 1
-                    draws.append(Draw(cards: hand, draw_num: draw_count))
-                    current_draw = draws.last!
-                }
-                
-                Spacer()
-                //.foregroundColor(.red)
-                
             }
-            Spacer()
+            
+            //current draw Box
+            GroupBox() {
+
+                    // display our current draw
+                DrawView(draw: current_draw)
+                .frame(height: 200)
+                   //Toggle(isOn: $userAgreed) {
+                     //  Text("I agree to the above terms")
+                   //}
+            }
+           
+            
+       
+        Text("Your Draws")
             .padding()
-            
-            DrawView(draw: current_draw)
-            
-            
+        
             NavigationStack {
                 ScrollView {
                         if !isCardGroupCollapsed {
                             ForEach(draws) { draw in
-                                //DrawView(draw: draw)
-                                //DrawView(draw: draws.last ?? Draw(cards: [], draw_num: 1))
-                            Button("Draw \(draw.draw_num)") {
-                                current_draw = draw
+                                LazyVStack {
+                                    //Label("Draw \(draw.draw_num)", systemImage: "building.columns")
+                                    Button(action: { self.current_draw = draw}) {
+                                        HStack { // stack of draws
+                                            ZStack (alignment: .bottomLeading) { 
+                                                // stack of card views
+                                                
+                                                ForEach(0..<draw.cards.count) { index in
+                                                    CardView(card: draw.cards[index])
+                                                        .frame(width: 200, height: 200)
+                                                        .offset(x: CGFloat(index) * 30.0,
+                                                                y: CGFloat(index) * 5.0)
+                                                        
+                                
+                                                    }
+                                                
+                                            }
+                                            Spacer()
+                                        } // Hs
+                                        
+                                    } // Button
+                                    .padding(.vertical, 15)
+                                    
+                                   
+                                    
+                                   
                             }
-                        }
-                    }
-                }
+                                .padding(.bottom, 30)
+                                Divider()// LSV
+                                
+                        } // end loop
+                    } // if end
+                } // scroll view
                 .navigationBarItems(
                     leading:
                         Button(action: { withAnimation { self.isCardGroupCollapsed.toggle()}}) {
@@ -99,14 +101,21 @@ struct ContentView: View {
                         },
                     
                     trailing:
-                        Menu("menu") {
-                            Text("Clear draws")
+                        Button("Clear Draws") {
+                            draws = []
+                            current_draw = Draw(cards: [], draw_num: 0)
                         })
             }
-            .foregroundColor(.red)
+            
+            
+            //.foregroundColor(.red)
         }
+        
+        
+        
     } // View
-}
+        
+
 #Preview {
     ContentView()
 }
